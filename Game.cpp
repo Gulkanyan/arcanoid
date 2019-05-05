@@ -19,20 +19,16 @@ Game::Game(QWidget *parent): QGraphicsView(parent){
     QApplication::setOverrideCursor(Qt::BlankCursor);
 }
 void Game::start(){
-    //stexcenq gndak@
-    Ball* ball = new Ball();//
+    Ball* ball = new Ball();
     ball->setPos(425,320);
     scene->addItem(ball);
-
-    //stexcenq hartutyuny
     paddle = new Paddle();
     paddle->setPos(150,575);
     scene->addItem(paddle);
     paddle->grabKeyboard();
-    //paddle->grabMouse();
     creatBlockGrid();
 }
-//gcenq syunery
+
 void Game::createBlockCol(double x){
     for (size_t i = 0, n = 3; i < n; ++i){
         Block* block = new Block();
@@ -41,7 +37,6 @@ void Game::createBlockCol(double x){
     }
 }
 
-//gcenq toxer@
 void Game::creatBlockGrid(){
     for (size_t i = 0; i < 10; ++i){
         createBlockCol(i*80);
