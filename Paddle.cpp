@@ -2,7 +2,7 @@
 #include <QBrush>
 
 Paddle::Paddle(QGraphicsItem *parent){
-    // nkarel uxxankyun
+    
     setRect(0,0,150,25);
     QBrush brush;
     brush.setStyle(Qt::SolidPattern);
@@ -17,7 +17,6 @@ void Paddle::keyPressEvent(QKeyEvent *event)
 {
     if(event->key() == Qt::Key_Right)
     {
-      //  qDebug()<<"Key Presses";
         setPos(x()+10,y());
         update();
     }
